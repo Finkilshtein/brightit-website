@@ -8,5 +8,10 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
+  siteMetadata: {
+    title: `Bright IT Studio`,
+    description: `High-quality software testing services`,
+    siteUrl: `http://brightitstudio.com`,
+  },
   plugins: [],
 }

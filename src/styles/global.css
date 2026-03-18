@@ -1,0 +1,354 @@
+/* src/styles/global.css */
+
+body, input, button, select, textarea {
+  margin: 0;
+  font-family: "Arial Black", sans-serif;
+}
+
+/* Універсальне виправлення для запобігання горизонтальному скролу */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 50vh;
+}
+
+.header-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 20px; /* Додаємо бокові відступи для мобілок */
+  box-sizing: border-box; /* Щоб падінги не роздували ширину */
+}
+
+.site-header {
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 0px;
+  background-color: #383838;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.site-logo {
+  height: 130px;
+  width: auto;
+}
+
+.site-title {
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 24px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+}
+
+.main-nav a:hover {
+  color: #ED6734;
+}
+
+/* Додаємо відступи всередині кожного слайда */
+.slick-slide > div {
+  margin: 0 15px; /* Це створить проміжок 30px між іконками */
+}
+
+/* Переконайся, що картинки всередині слайдера не перевищують ширину слайда */
+.slick-slide img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto; /* Центрування іконки всередині слайда */
+}
+
+/* Прибираємо можливий паразитний відступ самого контейнера слайдера */
+.slick-list {
+  margin: 0 -15px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+main {
+  flex-grow: 1;
+}
+
+section {
+  margin: 0;
+  min-height: 26vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+  gap: 30px;
+  justify-items: center;
+}
+
+.section-inner {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px 0px 10px;
+  text-align: center;
+}
+
+.section-white {
+  background-color: #ffffff;
+  color: #383838;
+}
+
+.section-dark {
+  background-color: #383838;
+}
+
+.section-dark-text {
+  color: #ffffff;
+}
+
+h2 {
+  color: #383838;
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+h2.orange-heading {
+  color: #ED6734;
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.services-subtitle {
+  margin: 0 0 16px;
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  color: #383838;
+}
+
+
+.services-features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 26px;
+  /* Прибираємо фон звідси, щоб бачити "прорізи" */
+  background-color: transparent; 
+}
+
+.services-feature {
+  background-color: #383838; /* Кожна картка стає темною */
+  color: #ffffff;
+  padding: 30px;            /* Внутрішній відступ, щоб текст не лип до країв */
+  border-radius: 8px;       /* Опціонально: трохи закруглити кути, як у сучасних SaaS */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;         /* Вирівнювання тексту всередині картки */
+}
+
+.services-feature h3 {
+  margin: 0 0 15px;
+  font-size: 1.1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ED6734;
+}
+
+/* Прибираємо зайві падінги з normal-text всередині фіч */
+.services-feature .normal-text {
+  padding: 0;
+  margin: 0;
+  font-size: 0.95rem; /* Можна трохи зменшити для карток */
+}
+
+@media (min-width: 900px) {
+  .services-features {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px; /* Це і буде товщина твоєї "білої рамки" між блоками */
+  }
+}
+
+.portfolio-btn {
+  display: inline-block;
+  margin: 20px 0;
+  padding: 10px 20px;
+  background-color: #383838;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.portfolio-white-btn {
+  display: inline-block;
+  margin: 20px 0px;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: #383838;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+  margin-top: 0px;
+}
+
+.grid-platforms .grid-item {
+  color: #ffffff;
+}
+
+.grid-services .grid-item {
+  color: #383838;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+}
+
+.grid-item img {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 10px;
+  object-fit: contain;
+}
+
+.about-text {
+  max-width: 1000px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-size: 1.1em;
+}
+
+.normal-text {
+  max-width: 1000px;  /* Обмежуємо ширину, щоб текст не розтягувався на весь екран */
+  margin: 0 auto;    /* Центруємо сам блок по горизонталі */
+  text-align: left;  /* Вирівнюємо текст всередині блоку по лівому краю */
+  line-height: 1.8;  /* Додаємо інтервал між рядками для читабельності */
+  font-size: 1.1rem; /* Оптимальний розмір для візитки */
+  color: inherit;    /* Колір підлаштується під фон секції (білий або темний) */
+  padding: 0 20px;   /* Відступи по боках для мобільних пристроїв */
+  font-family: Arial, Helvetica, sans-serif; /* Звичайний Arial */
+  font-weight: normal;
+}
+
+footer {
+  background-color: #ffffff;
+  color: #383838;
+  padding: 24px 20px; /* Ти вже маєш це в медіа-запиті, але переконайся, що немає padding-right: 50px */
+}
+
+footer a {
+  background-color: #ffffff;
+  color: #383838;
+  text-decoration: none;
+}
+
+.footer-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.footer-column h2 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  align-items: center;    /* Центрує контент (заголовок і список) по горизонталі */
+  text-align: center;     /* Центрує сам текст всередині елементів */
+}
+
+.social-list {
+  list-style: none;
+  padding: 0;
+  justify-items: center;
+  font-family: Arial, Helvetica, sans-serif; /* Звичайний Arial */
+  font-weight: normal;
+
+}
+
+.social-list li + li {
+  margin-top: 0px;
+
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    /* Прибираємо фіксовані відступи, якщо вони були */
+    padding: 10px 0;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .logo-area {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .main-nav a {
+    margin: 5px 10px; /* Однаковий відступ з обох сторін */
+  }
+
+  /* Дуже важливо для футера */
+  footer {
+    padding: 30px 20px !important;
+  }
+}
